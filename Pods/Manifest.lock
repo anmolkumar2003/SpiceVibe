@@ -1,0 +1,38 @@
+PODS:
+  - Alamofire (5.9.1)
+  - CollectionViewPagingLayout (1.1.0)
+  - lottie-ios (4.5.1)
+  - RAMAnimatedTabBarController (5.2.0)
+  - SDWebImage (5.19.1):
+    - SDWebImage/Core (= 5.19.1)
+  - SDWebImage/Core (5.19.1)
+  - SkeletonView (1.30.4)
+
+DEPENDENCIES:
+  - Alamofire
+  - CollectionViewPagingLayout
+  - lottie-ios
+  - RAMAnimatedTabBarController
+  - SDWebImage
+  - SkeletonView
+
+SPEC REPOS:
+  trunk:
+    - Alamofire
+    - CollectionViewPagingLayout
+    - lottie-ios
+    - RAMAnimatedTabBarController
+    - SDWebImage
+    - SkeletonView
+
+SPEC CHECKSUMS:
+  Alamofire: f36a35757af4587d8e4f4bfa223ad10be2422b8c
+  CollectionViewPagingLayout: 2f8d50683bae57ca88f47fa4ab0195c9079582cf
+  lottie-ios: 248b380fa1b97d18e792c37d90da7ab2aa0d6562
+  RAMAnimatedTabBarController: 6863a386e7ae2ab227cd60aa73ab8ff56cdacfdd
+  SDWebImage: 40b0b4053e36c660a764958bff99eed16610acbb
+  SkeletonView: 5a050f6411e697abd4cda0a8d767013399dccd69
+
+PODFILE CHECKSUM: fc0d276bad3c27a3713796d0dd70fed683073e49
+
+COCOAPODS: 1.16.2
