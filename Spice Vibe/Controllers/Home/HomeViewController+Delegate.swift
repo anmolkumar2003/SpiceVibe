@@ -101,8 +101,12 @@ extension HomeViewController: UITableViewDataSource,UITableViewDelegate{
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
-        let recipe = allRecipesViewModel.allRecipe(at: indexPath.row)
-        
+
+        let recipeIndex = indexPath.row - 2
+        guard recipeIndex >= 0 && recipeIndex < allRecipesViewModel.numberOfRecipes else { return }
+
+        let recipe = allRecipesViewModel.allRecipe(at: recipeIndex)
+
         let vc = SpiceVibeStoryBoards.viewController(from: .DetailedRecipe, ofType: DetailedRecipeViewController.self)
         vc.recipe = recipe
         navigationController?.pushViewController(vc, animated: true)
