@@ -19,6 +19,7 @@ class DetailedRecipeViewController: UIViewController {
     var recipe: Recipe?
     var recipeImg = UIImage()
     var ingridientText = String()
+    var heartButtonStatus = Bool()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -40,6 +41,14 @@ class DetailedRecipeViewController: UIViewController {
         }
     }
     @IBAction func heartButton(_ sender: Any) {
+        heartButtonStatus.toggle()
+        if heartButtonStatus == true{
+            heartButton.tintColor = .red
+            heartButton.setImage(UIImage(named: "heart-Red"), for: .normal)
+        } else{
+            heartButton.setImage(UIImage(named: ""), for: .normal)
+            heartButton.tintColor = .black
+        }
     }
     
     @IBAction func shareButton(_ sender: Any) {

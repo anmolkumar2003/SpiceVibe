@@ -1,9 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="32700.99.1234" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="ls5-um-yzy">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="23727" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="ls5-um-yzy">
     <device id="retina6_12" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="22685"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="23721"/>
+        <capability name="Image references" minToolsVersion="12.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -18,14 +19,14 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" contentInsetAdjustmentBehavior="never" translatesAutoresizingMaskIntoConstraints="NO" id="oGo-eR-Rw1">
-                                <rect key="frame" x="0.0" y="59" width="393" height="759"/>
+                                <rect key="frame" x="0.0" y="118" width="393" height="666"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="PAT-JZ-HdR">
                                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                                         <subviews>
                                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="5ze-LX-K6O">
                                                 <rect key="frame" x="0.0" y="0.0" width="393" height="200"/>
-                                                <color key="backgroundColor" red="0.85113602880000006" green="0.37737900019999998" blue="0.35683590170000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="200" id="m8f-f2-Xg0"/>
                                                 </constraints>
@@ -33,7 +34,7 @@
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="iJL-aB-Ikl">
                                                 <rect key="frame" x="0.0" y="180" width="393" height="672"/>
                                                 <subviews>
-                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="67T-4T-Nvs">
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="67T-4T-Nvs">
                                                         <rect key="frame" x="15" y="15" width="218" height="89.666666666666671"/>
                                                         <string key="text">Traditional Italian dinner with
 homemade pasta</string>
@@ -59,17 +60,14 @@ homemade pasta</string>
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="8uR-4S-98G">
                                                         <rect key="frame" x="258" y="15" width="120" height="40"/>
                                                         <subviews>
-                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Meal Type" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KDf-og-AM0">
-                                                                <rect key="frame" x="21" y="8" width="78.333333333333329" height="24"/>
-                                                                <constraints>
-                                                                    <constraint firstAttribute="height" constant="24" id="EKz-Hk-EKO"/>
-                                                                </constraints>
-                                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                                <nil key="textColor"/>
+                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Meal Type" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KDf-og-AM0">
+                                                                <rect key="frame" x="23.333333333333314" y="11" width="73.333333333333329" height="18"/>
+                                                                <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="15"/>
+                                                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                 <nil key="highlightedColor"/>
                                                             </label>
                                                         </subviews>
-                                                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                                        <color key="backgroundColor" systemColor="systemOrangeColor"/>
                                                         <constraints>
                                                             <constraint firstAttribute="height" constant="40" id="96q-XR-nbL"/>
                                                             <constraint firstAttribute="width" constant="120" id="qHd-ij-hfW"/>
@@ -126,14 +124,14 @@ homemade pasta</string>
                                                         </constraints>
                                                     </view>
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="dLH-1J-bRj">
-                                                        <rect key="frame" x="0.0" y="214.66666666666669" width="393" height="2"/>
+                                                        <rect key="frame" x="0.0" y="214.66666666666663" width="393" height="2"/>
                                                         <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         <constraints>
                                                             <constraint firstAttribute="height" constant="2" id="Sdz-rx-1eZ"/>
                                                         </constraints>
                                                     </view>
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ndf-NF-tMz">
-                                                        <rect key="frame" x="0.0" y="231.66666666666669" width="393" height="120"/>
+                                                        <rect key="frame" x="0.0" y="231.66666666666663" width="393" height="120"/>
                                                         <subviews>
                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Ingredients" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GV5-8j-RCy">
                                                                 <rect key="frame" x="15" y="0.0" width="133" height="25"/>
@@ -145,8 +143,8 @@ homemade pasta</string>
                                                                 <nil key="highlightedColor"/>
                                                             </label>
                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zhZ-wc-3Ko">
-                                                                <rect key="frame" x="15" y="35" width="363" height="20.333333333333329"/>
-                                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                                <rect key="frame" x="15" y="35" width="363" height="18"/>
+                                                                <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                                                 <nil key="textColor"/>
                                                                 <nil key="highlightedColor"/>
                                                             </label>
@@ -357,7 +355,7 @@ homemade pasta</string>
                                                         </constraints>
                                                     </view>
                                                 </subviews>
-                                                <color key="backgroundColor" systemColor="systemGreenColor"/>
+                                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <constraints>
                                                     <constraint firstItem="8uR-4S-98G" firstAttribute="leading" secondItem="67T-4T-Nvs" secondAttribute="trailing" constant="25" id="1tq-Ec-uEs"/>
                                                     <constraint firstAttribute="trailing" secondItem="ndf-NF-tMz" secondAttribute="trailing" id="2PL-JI-Xno"/>
@@ -411,14 +409,18 @@ homemade pasta</string>
                                                         <subviews>
                                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="amI-48-pqb">
                                                                 <rect key="frame" x="0.0" y="0.0" width="45" height="45"/>
+                                                                <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                 <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
-                                                                <state key="normal" image="chevron.backward" catalog="system"/>
+                                                                <state key="normal">
+                                                                    <imageReference key="image" image="chevron.backward" catalog="system" symbolScale="large"/>
+                                                                    <preferredSymbolConfiguration key="preferredSymbolConfiguration" weight="bold"/>
+                                                                </state>
                                                                 <connections>
                                                                     <action selector="backButton:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="LsD-F1-rqe"/>
                                                                 </connections>
                                                             </button>
                                                         </subviews>
-                                                        <color key="backgroundColor" systemColor="systemGray5Color"/>
+                                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         <constraints>
                                                             <constraint firstAttribute="bottom" secondItem="amI-48-pqb" secondAttribute="bottom" id="7bQ-Pv-Xu6"/>
                                                             <constraint firstAttribute="trailing" secondItem="amI-48-pqb" secondAttribute="trailing" id="USo-PD-5mR"/>
@@ -436,14 +438,18 @@ homemade pasta</string>
                                                                 <subviews>
                                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ghX-Nl-GTe">
                                                                         <rect key="frame" x="0.0" y="0.0" width="52.666666666666664" height="45"/>
+                                                                        <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                         <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
-                                                                        <state key="normal" image="square.and.arrow.up" catalog="system"/>
+                                                                        <state key="normal">
+                                                                            <imageReference key="image" image="square.and.arrow.up" catalog="system" symbolScale="large"/>
+                                                                            <preferredSymbolConfiguration key="preferredSymbolConfiguration" weight="bold"/>
+                                                                        </state>
                                                                         <connections>
                                                                             <action selector="shareButton:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="mhj-uc-BOK"/>
                                                                         </connections>
                                                                     </button>
                                                                 </subviews>
-                                                                <color key="backgroundColor" systemColor="systemOrangeColor"/>
+                                                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                 <constraints>
                                                                     <constraint firstItem="ghX-Nl-GTe" firstAttribute="leading" secondItem="I95-B5-k4h" secondAttribute="leading" id="BcP-WV-i74"/>
                                                                     <constraint firstItem="ghX-Nl-GTe" firstAttribute="top" secondItem="I95-B5-k4h" secondAttribute="top" id="JUi-Eq-HiW"/>
@@ -456,14 +462,18 @@ homemade pasta</string>
                                                                 <subviews>
                                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xmS-6O-fgf">
                                                                         <rect key="frame" x="0.0" y="0.0" width="52.333333333333336" height="45"/>
+                                                                        <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                         <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
-                                                                        <state key="normal" image="heart" catalog="system"/>
+                                                                        <state key="normal">
+                                                                            <imageReference key="image" image="heart" catalog="system" symbolScale="large"/>
+                                                                            <preferredSymbolConfiguration key="preferredSymbolConfiguration" weight="bold"/>
+                                                                        </state>
                                                                         <connections>
                                                                             <action selector="heartButton:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="QKu-rr-33b"/>
                                                                         </connections>
                                                                     </button>
                                                                 </subviews>
-                                                                <color key="backgroundColor" systemColor="systemOrangeColor"/>
+                                                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                 <constraints>
                                                                     <constraint firstItem="xmS-6O-fgf" firstAttribute="leading" secondItem="TS8-Yl-tqg" secondAttribute="leading" id="117-FN-Ttu"/>
                                                                     <constraint firstAttribute="bottom" secondItem="xmS-6O-fgf" secondAttribute="bottom" id="8WY-Zm-eq6"/>
@@ -515,12 +525,12 @@ homemade pasta</string>
                         <viewLayoutGuide key="safeArea" id="vDu-zF-Fre"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
-                            <constraint firstItem="PAT-JZ-HdR" firstAttribute="width" secondItem="5EZ-qb-Rvc" secondAttribute="width" id="8HR-vu-uuN"/>
                             <constraint firstItem="oGo-eR-Rw1" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" id="CTn-pr-f3p"/>
-                            <constraint firstItem="PAT-JZ-HdR" firstAttribute="height" secondItem="5EZ-qb-Rvc" secondAttribute="height" priority="250" id="Td3-SX-zVi"/>
+                            <constraint firstItem="PAT-JZ-HdR" firstAttribute="height" secondItem="5EZ-qb-Rvc" secondAttribute="height" id="FyL-Qz-lzh"/>
                             <constraint firstItem="vDu-zF-Fre" firstAttribute="bottom" secondItem="oGo-eR-Rw1" secondAttribute="bottom" id="WAC-aK-W7N"/>
-                            <constraint firstItem="oGo-eR-Rw1" firstAttribute="top" secondItem="vDu-zF-Fre" secondAttribute="top" id="fn5-pL-C0G"/>
+                            <constraint firstItem="PAT-JZ-HdR" firstAttribute="width" secondItem="5EZ-qb-Rvc" secondAttribute="width" id="Wmo-Zw-XuR"/>
                             <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="oGo-eR-Rw1" secondAttribute="trailing" id="qAs-1m-sNj"/>
+                            <constraint firstItem="oGo-eR-Rw1" firstAttribute="top" secondItem="vDu-zF-Fre" secondAttribute="top" id="tXJ-DI-0E7"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="MKx-Ve-PrP"/>
@@ -559,21 +569,15 @@ homemade pasta</string>
     <resources>
         <image name="chevron.backward" catalog="system" width="97" height="128"/>
         <image name="heart" catalog="system" width="128" height="107"/>
-        <image name="square.and.arrow.up" catalog="system" width="108" height="128"/>
+        <image name="square.and.arrow.up" catalog="system" width="110" height="128"/>
         <systemColor name="labelColor">
             <color white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
-        <systemColor name="systemGray5Color">
-            <color red="0.89803921568627454" green="0.89803921568627454" blue="0.91764705882352937" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-        </systemColor>
-        <systemColor name="systemGreenColor">
-            <color red="0.20392156862745098" green="0.7803921568627451" blue="0.34901960784313724" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-        </systemColor>
         <systemColor name="systemOrangeColor">
-            <color red="1" green="0.58431372549019611" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <color red="1" green="0.58431372550000005" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
         <systemColor name="systemYellowColor">
             <color red="1" green="0.80000000000000004" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>

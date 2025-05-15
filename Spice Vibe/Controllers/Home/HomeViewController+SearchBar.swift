@@ -17,8 +17,17 @@ extension HomeViewController: UISearchBarDelegate{
         allRecipiesTableView.reloadData()
     }
     
+    func searchBarTextDidBeginEditing(_ searchBar: UISearchBar) {
+        let rect = searchBar.convert(searchBar.bounds, to: allRecipiesTableView)
+        allRecipiesTableView.scrollRectToVisible(rect, animated: true)
+    }
     func searchBarCancelButtonClicked(_ searchBar: UISearchBar) {
         searchBar.resignFirstResponder()
+    }
+    
+    func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
+        print("Search button tapped")
+        searchBar.resignFirstResponder() // ✅ Keyboard dismiss hoga
     }
     
 }

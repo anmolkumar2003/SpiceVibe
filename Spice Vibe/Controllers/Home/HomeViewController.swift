@@ -26,18 +26,43 @@ class HomeViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         searchBar.delegate = self
+        allRecipiesTableView.keyboardDismissMode = .interactive
         registerTableAndCollectionCells()
     }
     
     override func viewWillAppear(_ animated: Bool) {
         apis()
+        NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillShow), name: UIResponder.keyboardWillShowNotification, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillHide), name: UIResponder.keyboardWillHideNotification, object: nil)
+    }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        NotificationCenter.default.removeObserver(self)
+    }
+
+    @objc func keyboardWillShow(notification: Notification) {
+        guard let userInfo = notification.userInfo,
+              let keyboardFrame = userInfo[UIResponder.keyboardFrameEndUserInfoKey] as? CGRect else { return }
+
+        let keyboardHeight = keyboardFrame.height
+        let contentInsets = UIEdgeInsets(top: 0, left: 0, bottom: keyboardHeight, right: 0)
+
+        allRecipiesTableView.contentInset = contentInsets
+        allRecipiesTableView.scrollIndicatorInsets = contentInsets
+    }
+
+    @objc func keyboardWillHide(notification: Notification) {
+        let contentInsets = UIEdgeInsets.zero
+        allRecipiesTableView.contentInset = contentInsets
+        allRecipiesTableView.scrollIndicatorInsets = contentInsets
     }
     
     @IBAction func menuBtn(_ sender: Any) {
         //        if let menuContainer = self.parent as? MenuContainerView {
         //            menuContainer.showSideMenu()
         //        } else {
-        //            print("❌ Error: HomeViewController is not inside MenuContainerView")
+        //            print("Error: HomeViewController is not inside MenuContainerView")
         //        }
     }
     
@@ -46,7 +71,7 @@ class HomeViewController: UIViewController {
         searchButton.isHidden = false
         menuBtn.isHidden = false
         self.searchButton.alpha = 1
-        resignFirstResponder()
+        searchBar.resignFirstResponder()
     }
     
     @IBAction func searchButtonAction(_ sender: Any) {
@@ -110,19 +135,19 @@ class HomeViewController: UIViewController {
 //    }
     
     func apis() {
-        print("🔄 Starting API calls")
-        //showLoader()
+        print("Starting API calls")
+       // showLoader()
 
         DispatchQueue.main.asyncAfter(deadline: .now() + 2) {
             let dispatchGroup = DispatchGroup()
 
             // Categories
             dispatchGroup.enter()
-            print("📡 Fetching Categories...")
+            print("Fetching Categories...")
             self.categoriesViewModel.categoriesUpdated = { [weak self] in
-                print("✅ Categories callback received")
+                print("Categories callback received")
                 defer {
-                    print("➡️ Leaving dispatch group for Categories")
+                    print("Leaving dispatch group for Categories")
                     dispatchGroup.leave()
                 }
                 self?.reloadTableView()
@@ -131,11 +156,11 @@ class HomeViewController: UIViewController {
 
             // Random Recipes
             dispatchGroup.enter()
-            print("📡 Fetching Random Recipes...")
+            print("Fetching Random Recipes...")
             self.randomRecipesViewModel.randomRecipesUpdated = { [weak self] in
-                print("✅ Random Recipes callback received")
+                print("Random Recipes callback received")
                 defer {
-                    print("➡️ Leaving dispatch group for Random Recipes")
+                    print("Leaving dispatch group for Random Recipes")
                     dispatchGroup.leave()
                 }
                 self?.reloadTableView()
@@ -144,12 +169,12 @@ class HomeViewController: UIViewController {
 
             // All Recipes
             dispatchGroup.enter()
-            print("📡 Fetching All Recipes...")
+            print("Fetching All Recipes...")
             // Set closures before calling fetch to avoid missed callback
             self.allRecipesViewModel.allRecipesUpdated = { [weak self] in
-                print("✅ All Recipes callback received")
+                print("All Recipes callback received")
                 defer {
-                    print("➡️ Leaving dispatch group for All Recipes")
+                    print("Leaving dispatch group for All Recipes")
                   //  dispatchGroup.leave()
                 }
                 self?.reloadTableView()
@@ -158,27 +183,19 @@ class HomeViewController: UIViewController {
             self.allRecipesViewModel.fetchAllRecipes()
 
             dispatchGroup.notify(queue: .main) { [weak self] in
-                print("🎉 All API calls completed. Hiding loader.")
+                print("All API calls completed. Hiding loader.")
                 self?.hideLoader()
             }
         }
     }
-
-
-    
-//    func reloadTableView(){
-//        self.allRecipiesTableView.reloadData()
-//    }
     
     func reloadTableView() {
-        print("📦 Reloading TableView...")
+        print("Reloading TableView...")
 
         guard let tableView = self.allRecipiesTableView else {
-            print("❌ tableView is nil!")
+            print("tableView is nil!")
             return
         }
-
-        print("✅ TableView exists. Reloading...")
         tableView.reloadData()
     }
 

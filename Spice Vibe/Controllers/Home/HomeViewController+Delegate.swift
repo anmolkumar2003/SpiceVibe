@@ -45,9 +45,8 @@ extension HomeViewController: UITableViewDataSource,UITableViewDelegate{
         let recipeIndex = indexPath.row - 2
         let totalRecipes = allRecipesViewModel.numberOfRecipes
 
-        // ✅ SAFETY GUARD
         guard recipeIndex >= 0 && recipeIndex < totalRecipes else {
-            print("❌ Out of bounds! recipeIndex: \(recipeIndex), total: \(totalRecipes)")
+            print("Out of bounds! recipeIndex: \(recipeIndex), total: \(totalRecipes)")
             return UITableViewCell()
         }
 
@@ -66,38 +65,6 @@ extension HomeViewController: UITableViewDataSource,UITableViewDelegate{
 
         return cell
     }
-
-
-
-//    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-//        
-//        if indexPath.row == 0{
-//            let cell = tableView.dequeueReusableCell(withIdentifier: "CategoriesTableCell", for: indexPath) as! CategoriesTableCell
-//            // Pass the ViewModel data to the CategoriesTableCell
-//            cell.viewModel = categoriesViewModel  // Set the ViewModel
-//            cell.categoriesCollectionView.reloadData() // Reload collection view after setting data
-//            return cell
-//            
-//        }
-//        else if indexPath.row == 1{
-//            let cell = tableView.dequeueReusableCell(withIdentifier: "RecipesCommonTableCell", for: indexPath) as! RecipesCommonTableCell
-//            cell.contentView.backgroundColor = .yellow
-//            return cell
-//            
-//        }
-//        else /*if indexPath.row == 2*/{
-//            let cell = tableView.dequeueReusableCell(withIdentifier: "PopularRecipesTableCell", for: indexPath) as! PopularRecipesTableCell
-//            let allRecipes = allRecipesViewModel.allRecipe(at: indexPath.item)
-//            let recipeImgUrl = URL(string: allRecipes.image)
-//            cell.recipeImage.sd_setImage(with: recipeImgUrl)
-//            cell.RatingLbl.text = "★★★★☆\(allRecipes.rating)"
-//            cell.cuisineLbl.text = allRecipes.cuisine
-//            cell.recipeNameLbl.text = allRecipes.name
-//            cell.sizeLbl.text = "\(allRecipes.difficulty)"
-//            return cell
-//        }
-//        return UITableViewCell()
-//    }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)

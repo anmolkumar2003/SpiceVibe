@@ -4,6 +4,7 @@
 
 import UIKit
 import RAMAnimatedTabBarController
+import GoogleSignIn
 
 class SignUpViewController: UIViewController {
     
@@ -45,6 +46,27 @@ class SignUpViewController: UIViewController {
         window.makeKeyAndVisible()
         
         UserDefaults.standard.setValue(true, forKey: "signUPSuccessfully")
+    }
+    @IBAction func googleSignInButton(_ sender: UIButton) {
+        GIDSignIn.sharedInstance.signIn(withPresenting: self) { signInResult, error in
+//            self.btnGoogleSignIn.isHidden = false
+//            self.btnGoogleSignOut.isHidden = true
+//            self.lblSignInStatus.text = "Welcome To GoogleSignIn! To continue with GoogleSignIn please hit below button. "
+            guard error == nil else { return }
+
+          // If sign in succeeded, display the app's main content View.
+            guard let signInResult = signInResult else { return }
+            let user = signInResult.user
+
+//            let emailAddress = user.profile?.email
+//            let fullName = user.profile?.name
+//            let familyName = user.profile?.familyName
+//            let profilePicUrl = user.profile?.imageURL(withDimension: 320)
+                
+//            self.lblSignInStatus.text = "Hi \(fullName ?? "")"
+//            self.btnGoogleSignIn.isHidden = true
+//            self.btnGoogleSignOut.isHidden = false
+        }
     }
     
     @IBAction func signInBtn(_ sender: Any) {

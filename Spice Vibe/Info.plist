@@ -28,6 +28,18 @@
 		<string>Merriweather-Italic-VariableFont_opsz,wdth,wght.ttf</string>
 		<string>Merriweather-VariableFont_opsz,wdth,wght.ttf</string>
 	</array>
+    <key>GIDClientID</key>
+    <string>82000306916-ekt1s9njuj2v4t42ncm729vdc3b2gspo.apps.googleusercontent.com</string>
+
+    <key>CFBundleURLTypes</key>
+    <array>
+      <dict>
+        <key>CFBundleURLSchemes</key>
+        <array>
+          <string>com.googleusercontent.apps.82000306916-ekt1s9njuj2v4t42ncm729vdc3b2gspo</string>
+        </array>
+      </dict>
+    </array>
     <key>UIUserInterfaceStyle</key>
     <string>Light</string>
 	<key>UIApplicationSceneManifest</key>
