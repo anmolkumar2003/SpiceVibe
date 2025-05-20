@@ -9,6 +9,6 @@ class FavoritesViewController: UIViewController{
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        LoaderManager.shared.showBurgerLoader(on: self.view)
+        LoaderManager.shared.showWorkInProgressLoader(on: self.view)
     }
 }

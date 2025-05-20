@@ -1,6 +1,6 @@
 //  RecipeCategoriesModel.swift
 //  Spice Vibe
-//  Created by mac on 01-03-2025.
+//  Created by anmol on 01-03-2025.
 
 import Foundation
 

@@ -18,7 +18,7 @@ class LoaderManager {
         backgroundView = UIView(frame: view.bounds)
         backgroundView?.backgroundColor = UIColor.black.withAlphaComponent(0.2)
         // Setup Lottie animation
-        animationView = LottieAnimationView(name: "Animation - 1741156096898")
+        animationView = LottieAnimationView(name: "O1rH9z7Hzd")
         animationView?.frame = CGRect(x: 0, y: 0, width: 250, height: 250)
         animationView?.center = view.center
         animationView?.contentMode = .scaleAspectFit
@@ -32,6 +32,25 @@ class LoaderManager {
         }
     }
 
+    func showWorkInProgressLoader( on view: UIView){
+        // Create background overlay
+        backgroundView = UIView(frame: view.bounds)
+        backgroundView?.backgroundColor = UIColor.black.withAlphaComponent(0.2)
+        // Setup Lottie animation
+        animationView = LottieAnimationView(name: "Animation - 1747731866523")
+        animationView?.frame = CGRect(x: 0, y: 0, width: 250, height: 250)
+        animationView?.center = view.center
+        animationView?.contentMode = .scaleAspectFit
+        animationView?.loopMode = .loop
+        animationView?.play()
+        
+        // Add to view
+        if let backgroundView = backgroundView, let animationView = animationView {
+            view.addSubview(backgroundView)
+            view.addSubview(animationView)
+        }
+    }
+    
     func showBurgerLoader(on view: UIView){
         // Create background overlay
         backgroundView = UIView(frame: view.bounds)

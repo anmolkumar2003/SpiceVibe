@@ -8,6 +8,6 @@ class ApiLinks: NSObject{
     
     static let recipesApiLink = "https://dummyjson.com/recipes"
     static let recipeCategoriesApiLink = "https://www.themealdb.com/api/json/v1/1/categories.php"
-    static let search = "https://dummyjson.com/recipes/search?q=Margherita"
+    static let searchRecipes = "https://dummyjson.com/recipes/search?q=Margherita"
     
 }

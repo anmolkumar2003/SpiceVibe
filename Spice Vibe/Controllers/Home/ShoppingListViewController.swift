@@ -8,6 +8,6 @@ class ShoppingListViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        LoaderManager.shared.showNooddlesLoader(on: self.view)
+        LoaderManager.shared.showWorkInProgressLoader(on: self.view)
     }
 }

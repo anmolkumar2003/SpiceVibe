@@ -35,12 +35,13 @@
 		25576BB72D7571720054CDC8 /* FavoritesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25576BB62D7571720054CDC8 /* FavoritesViewController.swift */; };
 		25576BB92D7571B80054CDC8 /* ShoppingListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25576BB82D7571B80054CDC8 /* ShoppingListViewController.swift */; };
 		25576BBB2D7573210054CDC8 /* MainTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25576BBA2D7573210054CDC8 /* MainTabBarController.swift */; };
-		255C9C5C2D7828BB0031697F /* Animation - 1741156096898.json in Resources */ = {isa = PBXBuildFile; fileRef = 255C9C5B2D7828BB0031697F /* Animation - 1741156096898.json */; };
 		256B88352D76B91C0064D9C2 /* RandomRecipesViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 256B88342D76B91C0064D9C2 /* RandomRecipesViewModel.swift */; };
 		256B88372D76CE3B0064D9C2 /* AllRecipesViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 256B88362D76CE3B0064D9C2 /* AllRecipesViewModel.swift */; };
 		256B883A2D76E73F0064D9C2 /* ApiErrors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 256B88392D76E73F0064D9C2 /* ApiErrors.swift */; };
 		256B883D2D76FDB00064D9C2 /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 256B883C2D76FDB00064D9C2 /* NetworkManager.swift */; };
 		256B88412D7724850064D9C2 /* Fonts in Resources */ = {isa = PBXBuildFile; fileRef = 256B88402D7724850064D9C2 /* Fonts */; };
+		259281202DDCC1EA00772C1B /* SignUpViewController+Validation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2592811F2DDCC1EA00772C1B /* SignUpViewController+Validation.swift */; };
+		259281232DDCCD6600772C1B /* O1rH9z7Hzd.json in Resources */ = {isa = PBXBuildFile; fileRef = 259281222DDCCD6600772C1B /* O1rH9z7Hzd.json */; };
 		259525672D68710A002BF2B8 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 259525662D68710A002BF2B8 /* LoginViewController.swift */; };
 		259525692D687B07002BF2B8 /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 259525682D687B07002BF2B8 /* SignUpViewController.swift */; };
 		2595256C2D688D1B002BF2B8 /* StoryBoardManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2595256B2D688D1B002BF2B8 /* StoryBoardManager.swift */; };
@@ -50,6 +51,7 @@
 		259793D72D75F84000182E0E /* Storyboardable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 259793D62D75F84000182E0E /* Storyboardable.swift */; };
 		259793D92D75FB5F00182E0E /* SampleMenuViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 259793D82D75FB5F00182E0E /* SampleMenuViewController.storyboard */; };
 		259793DB2D75FC1D00182E0E /* SampleMenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 259793DA2D75FC1D00182E0E /* SampleMenuViewController.swift */; };
+		25ABA25E2DDC9CE4007D355F /* Animation - 1747731866523.json in Resources */ = {isa = PBXBuildFile; fileRef = 25ABA25D2DDC9CE4007D355F /* Animation - 1747731866523.json */; };
 		25BB78A22D671B9500F3E5C9 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25BB78A12D671B9500F3E5C9 /* AppDelegate.swift */; };
 		25BB78A42D671B9500F3E5C9 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25BB78A32D671B9500F3E5C9 /* SceneDelegate.swift */; };
 		25BB78A62D671B9500F3E5C9 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25BB78A52D671B9500F3E5C9 /* HomeViewController.swift */; };
@@ -90,12 +92,13 @@
 		25576BB62D7571720054CDC8 /* FavoritesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoritesViewController.swift; sourceTree = "<group>"; };
 		25576BB82D7571B80054CDC8 /* ShoppingListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShoppingListViewController.swift; sourceTree = "<group>"; };
 		25576BBA2D7573210054CDC8 /* MainTabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabBarController.swift; sourceTree = "<group>"; };
-		255C9C5B2D7828BB0031697F /* Animation - 1741156096898.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "Animation - 1741156096898.json"; sourceTree = "<group>"; };
 		256B88342D76B91C0064D9C2 /* RandomRecipesViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RandomRecipesViewModel.swift; sourceTree = "<group>"; };
 		256B88362D76CE3B0064D9C2 /* AllRecipesViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AllRecipesViewModel.swift; sourceTree = "<group>"; };
 		256B88392D76E73F0064D9C2 /* ApiErrors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiErrors.swift; sourceTree = "<group>"; };
 		256B883C2D76FDB00064D9C2 /* NetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
 		256B88402D7724850064D9C2 /* Fonts */ = {isa = PBXFileReference; lastKnownFileType = folder; path = Fonts; sourceTree = "<group>"; };
+		2592811F2DDCC1EA00772C1B /* SignUpViewController+Validation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SignUpViewController+Validation.swift"; sourceTree = "<group>"; };
+		259281222DDCCD6600772C1B /* O1rH9z7Hzd.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = O1rH9z7Hzd.json; sourceTree = "<group>"; };
 		259525662D68710A002BF2B8 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		259525682D687B07002BF2B8 /* SignUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
 		2595256B2D688D1B002BF2B8 /* StoryBoardManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoryBoardManager.swift; sourceTree = "<group>"; };
@@ -105,6 +108,7 @@
 		259793D62D75F84000182E0E /* Storyboardable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Storyboardable.swift; sourceTree = "<group>"; };
 		259793D82D75FB5F00182E0E /* SampleMenuViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = SampleMenuViewController.storyboard; sourceTree = "<group>"; };
 		259793DA2D75FC1D00182E0E /* SampleMenuViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SampleMenuViewController.swift; sourceTree = "<group>"; };
+		25ABA25D2DDC9CE4007D355F /* Animation - 1747731866523.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = "Animation - 1747731866523.json"; sourceTree = "<group>"; };
 		25BB789E2D671B9500F3E5C9 /* Spice Vibe.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Spice Vibe.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		25BB78A12D671B9500F3E5C9 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		25BB78A32D671B9500F3E5C9 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -223,9 +227,9 @@
 		2553B18E2D68C24200631662 /* AuthControllers */ = {
 			isa = PBXGroup;
 			children = (
-				259525662D68710A002BF2B8 /* LoginViewController.swift */,
-				259525682D687B07002BF2B8 /* SignUpViewController.swift */,
-				2553B18C2D68BB2000631662 /* ForgotPasswordViewController.swift */,
+				259281242DDCCDCA00772C1B /* Login */,
+				259281212DDCC1F400772C1B /* SignUp */,
+				259281252DDCCDD600772C1B /* ForgotPassword */,
 			);
 			path = AuthControllers;
 			sourceTree = "<group>";
@@ -270,6 +274,31 @@
 				256B88402D7724850064D9C2 /* Fonts */,
 			);
 			name = Fonts;
+			sourceTree = "<group>";
+		};
+		259281212DDCC1F400772C1B /* SignUp */ = {
+			isa = PBXGroup;
+			children = (
+				259525682D687B07002BF2B8 /* SignUpViewController.swift */,
+				2592811F2DDCC1EA00772C1B /* SignUpViewController+Validation.swift */,
+			);
+			path = SignUp;
+			sourceTree = "<group>";
+		};
+		259281242DDCCDCA00772C1B /* Login */ = {
+			isa = PBXGroup;
+			children = (
+				259525662D68710A002BF2B8 /* LoginViewController.swift */,
+			);
+			path = Login;
+			sourceTree = "<group>";
+		};
+		259281252DDCCDD600772C1B /* ForgotPassword */ = {
+			isa = PBXGroup;
+			children = (
+				2553B18C2D68BB2000631662 /* ForgotPasswordViewController.swift */,
+			);
+			path = ForgotPassword;
 			sourceTree = "<group>";
 		};
 		2595256A2D688CF1002BF2B8 /* Utilities */ = {
@@ -356,9 +385,10 @@
 			isa = PBXGroup;
 			children = (
 				25BB78AA2D671B9700F3E5C9 /* Assets.xcassets */,
+				259281222DDCCD6600772C1B /* O1rH9z7Hzd.json */,
 				252E87EC2D79E3DC002E9125 /* Animation - 1741267678534.json */,
 				252E87ED2D79E3DC002E9125 /* Animation - 1741269868079.json */,
-				255C9C5B2D7828BB0031697F /* Animation - 1741156096898.json */,
+				25ABA25D2DDC9CE4007D355F /* Animation - 1747731866523.json */,
 			);
 			path = Assets;
 			sourceTree = "<group>";
@@ -534,8 +564,9 @@
 				25F378DD2D676FB6002BC230 /* SignUpStoryBoard.storyboard in Resources */,
 				04B494902D6B2B66007AEBD0 /* RecipesCategoriesCollectionCell.xib in Resources */,
 				25BB78AB2D671B9700F3E5C9 /* Assets.xcassets in Resources */,
-				255C9C5C2D7828BB0031697F /* Animation - 1741156096898.json in Resources */,
+				259281232DDCCD6600772C1B /* O1rH9z7Hzd.json in Resources */,
 				04B494952D6B308F007AEBD0 /* RecipesCommonTableCell.xib in Resources */,
+				25ABA25E2DDC9CE4007D355F /* Animation - 1747731866523.json in Resources */,
 				25BB78AE2D671B9700F3E5C9 /* Base in Resources */,
 				25BB78A92D671B9500F3E5C9 /* Base in Resources */,
 				04B4949A2D6B3176007AEBD0 /* PopularRecipesTableCell.xib in Resources */,
@@ -562,9 +593,13 @@
 			inputFileListPaths = (
 				"${PODS_ROOT}/Target Support Files/Pods-Spice Vibe/Pods-Spice Vibe-frameworks-${CONFIGURATION}-input-files.xcfilelist",
 			);
+			inputPaths = (
+			);
 			name = "[CP] Embed Pods Frameworks";
 			outputFileListPaths = (
 				"${PODS_ROOT}/Target Support Files/Pods-Spice Vibe/Pods-Spice Vibe-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -618,6 +653,7 @@
 				256B88372D76CE3B0064D9C2 /* AllRecipesViewModel.swift in Sources */,
 				04B4949B2D6B3176007AEBD0 /* PopularRecipesTableCell.swift in Sources */,
 				0488158B2D6B801600B575BE /* HomeViewController+Delegate.swift in Sources */,
+				259281202DDCC1EA00772C1B /* SignUpViewController+Validation.swift in Sources */,
 				25DA0F6C2D6860850095EEE1 /* RecipesModel.swift in Sources */,
 				250BFED82D78198600A81902 /* CustomLoaderView.swift in Sources */,
 				259793D72D75F84000182E0E /* Storyboardable.swift in Sources */,

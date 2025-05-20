@@ -11,7 +11,8 @@ enum SpiceVibeStoryBoards: String {
     case login = "LoginStoryBoard"
     case forgotPassword = "ForgotPassword"
     case DetailedRecipe = "DetailedRecipe"
-
+    case sampleMenuViewController = "SampleMenuViewController"
+    
     var instance: UIStoryboard {
         return UIStoryboard(name: self.rawValue, bundle: nil)
     }

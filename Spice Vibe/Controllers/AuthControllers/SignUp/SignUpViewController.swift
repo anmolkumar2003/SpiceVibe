@@ -1,6 +1,6 @@
 //  SignUpViewController.swift
 //  Spice Vibe
-//  Created by caglobal on 21/02/25.
+//  Created by anmol on 21/02/25.
 
 import UIKit
 import RAMAnimatedTabBarController
@@ -25,6 +25,8 @@ class SignUpViewController: UIViewController {
     @IBOutlet weak var signUpButton: UIButton!
     @IBOutlet weak var confirmPasswordTextField: UITextField!
     
+    let errorLabel = UILabel()
+
     override func viewDidLoad() {
         super.viewDidLoad()
         setViewUI()
@@ -34,6 +36,24 @@ class SignUpViewController: UIViewController {
     //MARK: IBActions
     
     @IBAction func signUpBtn(_ sender: Any) {
+        
+        guard let email = emailTextField.text,
+                let password = passwordTextField.text,
+                let confirmPassword = confirmPasswordTextField.text else {
+              errorLabel.text = "Please fill all fields."
+              return
+          }
+          
+          if !isValidEmail(email) {
+              errorLabel.text = "Invalid email address."
+          } else if !isValidPassword(password) {
+              errorLabel.text = "Password must be at least 6 characters."
+          } else if !doPasswordsMatch(password, confirmPassword) {
+              errorLabel.text = "Passwords do not match."
+          } else {
+              errorLabel.text = ""
+        
+          }
         guard let sceneDelegate = UIApplication.shared.connectedScenes.first?.delegate as? SceneDelegate,
               let window = sceneDelegate.window,
               let tabBarVC = UIStoryboard(name: "Main", bundle: nil)
@@ -47,6 +67,7 @@ class SignUpViewController: UIViewController {
         
         UserDefaults.standard.setValue(true, forKey: "signUPSuccessfully")
     }
+    
     @IBAction func googleSignInButton(_ sender: UIButton) {
         GIDSignIn.sharedInstance.signIn(withPresenting: self) { signInResult, error in
 //            self.btnGoogleSignIn.isHidden = false
@@ -81,6 +102,16 @@ class SignUpViewController: UIViewController {
     }
     
     func setViewUI(){
+        
+        let labelWidth: CGFloat = 200
+        let labelHeight: CGFloat = 30
+        let x = signUpVcMainView.bounds.midX - (labelWidth / 2)
+        let y = signUpVcMainView.bounds.midY - (labelHeight / 2)
+
+        errorLabel.frame = CGRect(x: x, y: y, width: labelWidth, height: labelHeight)
+
+        view.addSubview(errorLabel)
+        view.bringSubviewToFront(errorLabel)
         signUpButton.cornerRadius = 10
         backButtonView.layer.cornerRadius = backButtonView.frame.width / 2
         backButtonView.layer.shadowColor = UIColor.black.cgColor

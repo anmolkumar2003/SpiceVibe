@@ -28,10 +28,10 @@ class HomeViewController: UIViewController {
         searchBar.delegate = self
         allRecipiesTableView.keyboardDismissMode = .interactive
         registerTableAndCollectionCells()
+        apis()
     }
     
     override func viewWillAppear(_ animated: Bool) {
-        apis()
         NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillShow), name: UIResponder.keyboardWillShowNotification, object: nil)
         NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillHide), name: UIResponder.keyboardWillHideNotification, object: nil)
     }
@@ -59,11 +59,9 @@ class HomeViewController: UIViewController {
     }
     
     @IBAction func menuBtn(_ sender: Any) {
-        //        if let menuContainer = self.parent as? MenuContainerView {
-        //            menuContainer.showSideMenu()
-        //        } else {
-        //            print("Error: HomeViewController is not inside MenuContainerView")
-        //        }
+        
+        let menuVc = SpiceVibeStoryBoards.viewController(from: .sampleMenuViewController, ofType: SampleMenuViewController.self)
+        navigationController?.pushViewController(menuVc, animated: true)
     }
     
     @IBAction func cancelButton(_ sender: Any) {
@@ -96,52 +94,15 @@ class HomeViewController: UIViewController {
     func hideLoader(){
         LoaderManager.shared.hideLoader()
     }
-
-//    func apis(){
-//       
-//        showLoader()
-//        DispatchQueue.main.asyncAfter(deadline: .now() + 2, execute: {
-//        let dispatchGroup = DispatchGroup()
-//        dispatchGroup.enter()
-//            self.categoriesViewModel.categoriesUpdated = { [weak self] in
-//            self?.relaodTableView()
-//            dispatchGroup.leave()
-//        }
-//        
-//        // Fetch categories from the ViewModel
-//            self.categoriesViewModel.fetchCategories()
-//            
-//            dispatchGroup.enter()
-//            self.randomRecipesViewModel.randomRecipesUpdated = {
-//            [weak self] in
-//            self?.relaodTableView()
-//                dispatchGroup.leave()
-//
-//        }
-//            dispatchGroup.enter()
-//            self.randomRecipesViewModel.fetchRandomRecipes()
-//            self.allRecipesViewModel.allRecipesUpdated = {
-//            [weak self] in
-//            self?.relaodTableView()
-//                dispatchGroup.leave()
-//                Thread 1: EXC_BAD_INSTRUCTION (code=EXC_I386_INVOP, subcode=0x0)
-//        }
-//            self.allRecipesViewModel.fetchAllRecipes()
-//        
-//        dispatchGroup.notify(queue: .main) { [weak self] in
-//                self?.hideLoader()
-//            }
-//        })
-//    }
     
     func apis() {
-        print("Starting API calls")
-       // showLoader()
-
+        showLoader()
+        
         DispatchQueue.main.asyncAfter(deadline: .now() + 2) {
             let dispatchGroup = DispatchGroup()
-
-            // Categories
+            
+            // MARK: - Categories API
+            
             dispatchGroup.enter()
             print("Fetching Categories...")
             self.categoriesViewModel.categoriesUpdated = { [weak self] in
@@ -153,8 +114,9 @@ class HomeViewController: UIViewController {
                 self?.reloadTableView()
             }
             self.categoriesViewModel.fetchCategories()
-
-            // Random Recipes
+            
+            // MARK: - Random Recipes API
+            
             dispatchGroup.enter()
             print("Fetching Random Recipes...")
             self.randomRecipesViewModel.randomRecipesUpdated = { [weak self] in
@@ -166,26 +128,27 @@ class HomeViewController: UIViewController {
                 self?.reloadTableView()
             }
             self.randomRecipesViewModel.fetchRandomRecipes()
-
-            // All Recipes
+            
+            // MARK: - All Recipes API
+            
             dispatchGroup.enter()
             print("Fetching All Recipes...")
-            // Set closures before calling fetch to avoid missed callback
             self.allRecipesViewModel.allRecipesUpdated = { [weak self] in
                 print("All Recipes callback received")
                 defer {
-                    print("Leaving dispatch group for All Recipes")
-                  //  dispatchGroup.leave()
+                    dispatchGroup.leave()
                 }
                 self?.reloadTableView()
             }
-
             self.allRecipesViewModel.fetchAllRecipes()
-
+            
+            // MARK: - Completion
+            
             dispatchGroup.notify(queue: .main) { [weak self] in
                 print("All API calls completed. Hiding loader.")
                 self?.hideLoader()
             }
+            
         }
     }
     
