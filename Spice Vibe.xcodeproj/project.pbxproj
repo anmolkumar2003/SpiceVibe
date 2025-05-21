@@ -62,6 +62,7 @@
 		25DA0F6E2D68611F0095EEE1 /* ApiLinks.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25DA0F6D2D68611F0095EEE1 /* ApiLinks.swift */; };
 		25DA0F702D6861830095EEE1 /* ApiEndPoints.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25DA0F6F2D6861830095EEE1 /* ApiEndPoints.swift */; };
 		25E3BAEE2D7EB8B3008CDA18 /* HomeViewController+SearchBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25E3BAED2D7EB8B3008CDA18 /* HomeViewController+SearchBar.swift */; };
+		25EED7762DDE091A00C03AD3 /* CategoryRecipe.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 25EED7752DDE091A00C03AD3 /* CategoryRecipe.storyboard */; };
 		25F378DA2D676F91002BC230 /* LoginStoryBoard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 25F378D92D676F91002BC230 /* LoginStoryBoard.storyboard */; };
 		25F378DD2D676FB6002BC230 /* SignUpStoryBoard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 25F378DC2D676FB6002BC230 /* SignUpStoryBoard.storyboard */; };
 /* End PBXBuildFile section */
@@ -121,6 +122,7 @@
 		25DA0F6D2D68611F0095EEE1 /* ApiLinks.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiLinks.swift; sourceTree = "<group>"; };
 		25DA0F6F2D6861830095EEE1 /* ApiEndPoints.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiEndPoints.swift; sourceTree = "<group>"; };
 		25E3BAED2D7EB8B3008CDA18 /* HomeViewController+SearchBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "HomeViewController+SearchBar.swift"; sourceTree = "<group>"; };
+		25EED7752DDE091A00C03AD3 /* CategoryRecipe.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = CategoryRecipe.storyboard; sourceTree = "<group>"; };
 		25F378D92D676F91002BC230 /* LoginStoryBoard.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = LoginStoryBoard.storyboard; sourceTree = "<group>"; };
 		25F378DC2D676FB6002BC230 /* SignUpStoryBoard.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = SignUpStoryBoard.storyboard; sourceTree = "<group>"; };
 		B05901CB38F125CAA339C689 /* Pods-Spice Vibe.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Spice Vibe.release.xcconfig"; path = "Target Support Files/Pods-Spice Vibe/Pods-Spice Vibe.release.xcconfig"; sourceTree = "<group>"; };
@@ -177,6 +179,7 @@
 				25BB78A72D671B9500F3E5C9 /* Main.storyboard */,
 				259793D82D75FB5F00182E0E /* SampleMenuViewController.storyboard */,
 				04B494A62D6B45CA007AEBD0 /* DetailedRecipe.storyboard */,
+				25EED7752DDE091A00C03AD3 /* CategoryRecipe.storyboard */,
 				25F378DB2D676F97002BC230 /* Login */,
 				25F378DE2D676FBB002BC230 /* SignUp */,
 				04B494A02D6B441D007AEBD0 /* ForgotPassword */,
@@ -574,6 +577,7 @@
 				259793D22D75F42600182E0E /* RandomRecipesTableCell.xib in Resources */,
 				259793D92D75FB5F00182E0E /* SampleMenuViewController.storyboard in Resources */,
 				04B494A72D6B45CA007AEBD0 /* DetailedRecipe.storyboard in Resources */,
+				25EED7762DDE091A00C03AD3 /* CategoryRecipe.storyboard in Resources */,
 				04B4948B2D6B2732007AEBD0 /* RecipesCollectionCell.xib in Resources */,
 				25F378DA2D676F91002BC230 /* LoginStoryBoard.storyboard in Resources */,
 				042046882D73768C0003B9D0 /* CategoriesTableCell.xib in Resources */,

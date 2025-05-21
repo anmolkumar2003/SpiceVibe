@@ -11,6 +11,7 @@ import Lottie
 
 class HomeViewController: UIViewController {
     
+    @IBOutlet weak var popuar: UILabel!
     @IBOutlet weak var menuBtn: UIButton!
     @IBOutlet weak var allRecipiesTableView: UITableView!
     @IBOutlet weak var searchButton: UIButton!

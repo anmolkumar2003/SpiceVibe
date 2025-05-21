@@ -6,14 +6,22 @@ import UIKit
 import RAMAnimatedTabBarController
 import GoogleSignIn
 
+var googleUserName = String()
+var googleUserPicUrl = String()
+var googleUserEmail = String()
+
 class SignUpViewController: UIViewController {
     
+    @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
+    @IBOutlet weak var passwordVisibilityToggleBtn: UIButton!
+    @IBOutlet weak var confirmPasswordView: UIView!
+    @IBOutlet weak var signInBtnOutlet: UIButton!
     @IBOutlet var signUpVcMainView: UIView!
     @IBOutlet weak var confirmPassTfView: UIView!
     @IBOutlet weak var backButtonView: UIView!
     @IBOutlet weak var emailView: UIView!
     @IBOutlet weak var passwordView: UIView!
-    @IBOutlet weak var confirmPasswordView: UIView!
+    @IBOutlet weak var confirmPasswordVisibilityToggle: UIButton!
     @IBOutlet weak var passTfView: UIView!
     @IBOutlet weak var emailTfView: UIView!
     @IBOutlet weak var fullNameTfView: UIView!
@@ -26,11 +34,12 @@ class SignUpViewController: UIViewController {
     @IBOutlet weak var confirmPasswordTextField: UITextField!
     
     let errorLabel = UILabel()
-
+    var confirmPassToggle = false
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         setViewUI()
-        
+        activityIndicator.isHidden = true
     }
     
     //MARK: IBActions
@@ -70,26 +79,25 @@ class SignUpViewController: UIViewController {
     
     @IBAction func googleSignInButton(_ sender: UIButton) {
         GIDSignIn.sharedInstance.signIn(withPresenting: self) { signInResult, error in
-//            self.btnGoogleSignIn.isHidden = false
-//            self.btnGoogleSignOut.isHidden = true
-//            self.lblSignInStatus.text = "Welcome To GoogleSignIn! To continue with GoogleSignIn please hit below button. "
+
             guard error == nil else { return }
 
           // If sign in succeeded, display the app's main content View.
             guard let signInResult = signInResult else { return }
             let user = signInResult.user
-
-//            let emailAddress = user.profile?.email
-//            let fullName = user.profile?.name
-//            let familyName = user.profile?.familyName
-//            let profilePicUrl = user.profile?.imageURL(withDimension: 320)
-                
-//            self.lblSignInStatus.text = "Hi \(fullName ?? "")"
-//            self.btnGoogleSignIn.isHidden = true
-//            self.btnGoogleSignOut.isHidden = false
+            self.activityIndicator.isHidden = false
+            self.activityIndicator.startAnimating()
+            DispatchQueue.main.asyncAfter(deadline: .now() + 3, execute: {
+                self.goToHomeScreen()
+                self.activityIndicator.isHidden = true
+            })
+            
+            googleUserName = user.profile?.name ?? ""
+            googleUserPicUrl = user.profile?.imageURL(withDimension: 320)?.absoluteString ?? ""
+            googleUserEmail = user.profile?.email ?? ""
         }
     }
-    
+
     @IBAction func signInBtn(_ sender: Any) {
         let loginVc = SpiceVibeStoryBoards.viewController(from: .login, ofType: LoginViewController.self)
         self.navigationController?.pushViewController(loginVc, animated: true)
@@ -98,7 +106,29 @@ class SignUpViewController: UIViewController {
     @IBAction func backBtnAction(_ sender: Any) {
         let loginVc = SpiceVibeStoryBoards.viewController(from: .DetailedRecipe, ofType: DetailedRecipeViewController.self)
         self.navigationController?.pushViewController(loginVc, animated: true)
-        
+    }
+    
+    @IBAction func passwordToggleBtnAction(_ sender: UIButton) {
+        confirmPassToggle.toggle()
+       if confirmPassToggle{
+           passwordVisibilityToggleBtn.setImage(UIImage(named: "eye"), for: .normal)
+       } else{
+           passwordVisibilityToggleBtn.setImage(UIImage(named: "eye-slash"), for: .normal)
+       }
+    }
+    
+    @IBAction func confrmPassToggleBtnAction(_ sender: UIButton) {
+         confirmPassToggle.toggle()
+        if confirmPassToggle{
+            confirmPasswordVisibilityToggle.setImage(UIImage(named: "eye"), for: .normal)
+        } else{
+            confirmPasswordVisibilityToggle.setImage(UIImage(named: "eye-slash"), for: .normal)
+        }
+    }
+    
+    func goToHomeScreen() {
+        let homeVc = SpiceVibeStoryBoards.viewController(from: .main, ofType: HomeViewController.self)
+        navigationController?.pushViewController(homeVc, animated: true)
     }
     
     func setViewUI(){
@@ -132,5 +162,7 @@ class SignUpViewController: UIViewController {
         fullNameTfView.cornerRadius = 10
         fullNameTfView.borderColor = .lightGray
         fullNameTfView.borderWidth = 1
+        signInBtnOutlet.titleLabel?.font = UIFont(name: "Roboto-Bold", size: 14)
+        signUpButton.titleLabel?.font = UIFont(name: "Roboto-Bold", size: 14)
     }
 }

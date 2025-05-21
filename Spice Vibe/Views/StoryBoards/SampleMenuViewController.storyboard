@@ -24,10 +24,6 @@
                                     <constraint firstAttribute="width" secondItem="gk9-AY-0Nh" secondAttribute="height" multiplier="15:15" id="iI7-dX-NjT"/>
                                 </constraints>
                             </imageView>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="rko-tL-qAS">
-                                <rect key="frame" x="0.0" y="300" width="414" height="436"/>
-                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                            </tableView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fsX-7c-cbU">
                                 <rect key="frame" x="15" y="35" width="35" height="35"/>
                                 <constraints>
@@ -43,20 +39,55 @@
                                     <action selector="backButton:" destination="0Wn-63-Kag" eventType="touchUpInside" id="FJH-q5-OCp"/>
                                 </connections>
                             </button>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="prN-uD-Tjm">
+                                <rect key="frame" x="15" y="330" width="384" height="100"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RWg-Ee-0gA">
+                                        <rect key="frame" x="0.0" y="0.0" width="384" height="33.333333333333336"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PWb-xM-FeD">
+                                        <rect key="frame" x="0.0" y="33.333333333333314" width="384" height="33.333333333333343"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="sWK-UI-EI8">
+                                        <rect key="frame" x="0.0" y="66.666666666666686" width="384" height="33.333333333333343"/>
+                                        <state key="normal" title="Button"/>
+                                        <buttonConfiguration key="configuration" style="plain" title="LOG OUT">
+                                            <fontDescription key="titleFontDescription" type="boldSystem" pointSize="16"/>
+                                            <color key="baseForegroundColor" systemColor="systemRedColor"/>
+                                        </buttonConfiguration>
+                                        <connections>
+                                            <action selector="logOutBtn:" destination="0Wn-63-Kag" eventType="touchUpInside" id="ebn-Ll-eSV"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="100" id="p9Z-IJ-mpY"/>
+                                </constraints>
+                            </stackView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="AA7-Pa-KoB"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
-                            <constraint firstItem="AA7-Pa-KoB" firstAttribute="trailing" secondItem="rko-tL-qAS" secondAttribute="trailing" id="DE9-wd-RGr"/>
+                            <constraint firstItem="AA7-Pa-KoB" firstAttribute="trailing" secondItem="prN-uD-Tjm" secondAttribute="trailing" constant="15" id="DbW-of-aeV"/>
                             <constraint firstItem="fsX-7c-cbU" firstAttribute="leading" secondItem="AA7-Pa-KoB" secondAttribute="leading" constant="15" id="Lzk-AD-i63"/>
-                            <constraint firstItem="AA7-Pa-KoB" firstAttribute="bottom" secondItem="rko-tL-qAS" secondAttribute="bottom" id="VMe-fH-So2"/>
                             <constraint firstItem="fsX-7c-cbU" firstAttribute="top" secondItem="AA7-Pa-KoB" secondAttribute="top" constant="15" id="eZc-3J-e7W"/>
                             <constraint firstItem="gk9-AY-0Nh" firstAttribute="top" secondItem="AA7-Pa-KoB" secondAttribute="top" constant="100" id="fxV-3E-hQs"/>
-                            <constraint firstItem="rko-tL-qAS" firstAttribute="leading" secondItem="AA7-Pa-KoB" secondAttribute="leading" id="jFE-Lc-pHN"/>
+                            <constraint firstItem="prN-uD-Tjm" firstAttribute="top" secondItem="gk9-AY-0Nh" secondAttribute="bottom" constant="60" id="gri-cW-TYH"/>
                             <constraint firstItem="gk9-AY-0Nh" firstAttribute="centerX" secondItem="AA7-Pa-KoB" secondAttribute="centerX" id="p4H-8Z-dhV"/>
-                            <constraint firstItem="rko-tL-qAS" firstAttribute="top" secondItem="gk9-AY-0Nh" secondAttribute="bottom" constant="30" id="wyT-qP-r8D"/>
+                            <constraint firstItem="prN-uD-Tjm" firstAttribute="leading" secondItem="AA7-Pa-KoB" secondAttribute="leading" constant="15" id="s2H-td-axo"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="lblEmail" destination="PWb-xM-FeD" id="eeh-zS-Erh"/>
+                        <outlet property="lblName" destination="RWg-Ee-0gA" id="e6A-2V-w4p"/>
+                        <outlet property="userImg" destination="gk9-AY-0Nh" id="rxI-T6-6yD"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="pJg-7c-zou" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -68,6 +99,9 @@
         <image name="arrow.backward" catalog="system" width="128" height="95"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="systemRedColor">
+            <color red="1" green="0.23137254901960785" blue="0.18823529411764706" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
     </resources>
 </document>
