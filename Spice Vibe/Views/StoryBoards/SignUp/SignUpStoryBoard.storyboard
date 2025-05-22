@@ -60,13 +60,13 @@
                                 <rect key="frame" x="0.0" y="178" width="375" height="489"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="JoL-le-XfV">
-                                        <rect key="frame" x="0.0" y="0.0" width="382" height="667"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                                         <subviews>
                                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="ySs-f4-SOt">
-                                                <rect key="frame" x="20" y="0.0" width="342" height="350"/>
+                                                <rect key="frame" x="20" y="0.0" width="335" height="350"/>
                                                 <subviews>
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="9Cx-bG-Jat">
-                                                        <rect key="frame" x="0.0" y="0.0" width="342" height="72.5"/>
+                                                        <rect key="frame" x="0.0" y="0.0" width="335" height="72.5"/>
                                                         <subviews>
                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Id4-OI-WBd">
                                                                 <rect key="frame" x="8" y="0.0" width="42" height="20"/>
@@ -106,7 +106,7 @@
                                                         </constraints>
                                                     </view>
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="9Yd-er-aoS">
-                                                        <rect key="frame" x="0.0" y="92.5" width="342" height="72.5"/>
+                                                        <rect key="frame" x="0.0" y="92.5" width="335" height="72.5"/>
                                                         <subviews>
                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Email" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9gY-D2-0Kg">
                                                                 <rect key="frame" x="8" y="0.0" width="39" height="20"/>
@@ -143,7 +143,7 @@
                                                         </constraints>
                                                     </view>
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="OM2-7q-esp">
-                                                        <rect key="frame" x="0.0" y="185" width="342" height="72.5"/>
+                                                        <rect key="frame" x="0.0" y="185" width="335" height="72.5"/>
                                                         <subviews>
                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Password" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PoV-js-p1L">
                                                                 <rect key="frame" x="8" y="0.0" width="69.5" height="20"/>
@@ -195,7 +195,7 @@
                                                         </constraints>
                                                     </view>
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Hx6-vz-G9k">
-                                                        <rect key="frame" x="0.0" y="277.5" width="342" height="72.5"/>
+                                                        <rect key="frame" x="0.0" y="277.5" width="335" height="72.5"/>
                                                         <subviews>
                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Confirm Password" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uVB-lJ-nhV">
                                                                 <rect key="frame" x="8" y="0.0" width="131" height="20"/>
@@ -498,6 +498,7 @@
                                 <constraints>
                                     <constraint firstAttribute="bottom" secondItem="JoL-le-XfV" secondAttribute="bottom" id="GEK-Yg-z7x"/>
                                     <constraint firstAttribute="trailing" secondItem="JoL-le-XfV" secondAttribute="trailing" id="PEl-N4-oQU"/>
+                                    <constraint firstItem="JoL-le-XfV" firstAttribute="centerX" secondItem="wb8-uB-1rG" secondAttribute="centerX" id="aEj-FT-qmr"/>
                                     <constraint firstItem="JoL-le-XfV" firstAttribute="leading" secondItem="wb8-uB-1rG" secondAttribute="leading" id="hXd-j6-VEe"/>
                                     <constraint firstItem="JoL-le-XfV" firstAttribute="top" secondItem="wb8-uB-1rG" secondAttribute="top" id="nlG-h7-A3p"/>
                                 </constraints>
@@ -529,7 +530,6 @@
                             <constraint firstItem="3Mz-0S-dGc" firstAttribute="top" secondItem="22r-Nw-qep" secondAttribute="bottom" constant="10" id="pF9-7H-1t1"/>
                             <constraint firstItem="HeU-dw-T9i" firstAttribute="top" secondItem="xqh-qQ-a6k" secondAttribute="top" constant="20" id="tDm-fa-M2l"/>
                             <constraint firstItem="OGQ-Rj-epq" firstAttribute="centerX" secondItem="NFK-Tp-TT9" secondAttribute="centerX" id="wTf-T0-2Ui"/>
-                            <constraint firstItem="JoL-le-XfV" firstAttribute="width" secondItem="NFK-Tp-TT9" secondAttribute="width" multiplier="1.01867" id="yLY-bw-tST"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="Qac-G0-CTx"/>
