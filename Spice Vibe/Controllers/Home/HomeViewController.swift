@@ -8,6 +8,7 @@ import SDWebImage
 import CollectionViewPagingLayout
 import RAMAnimatedTabBarController
 import Lottie
+import SkeletonView
 
 class HomeViewController: UIViewController {
     
@@ -29,12 +30,12 @@ class HomeViewController: UIViewController {
         searchBar.delegate = self
         allRecipiesTableView.keyboardDismissMode = .interactive
         registerTableAndCollectionCells()
-        apis()
     }
     
     override func viewWillAppear(_ animated: Bool) {
         NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillShow), name: UIResponder.keyboardWillShowNotification, object: nil)
         NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillHide), name: UIResponder.keyboardWillHideNotification, object: nil)
+        apis()
     }
     
     override func viewWillDisappear(_ animated: Bool) {
@@ -97,7 +98,7 @@ class HomeViewController: UIViewController {
     }
     
     func apis() {
-        showLoader()
+        //showLoader()
         
         DispatchQueue.main.asyncAfter(deadline: .now() + 2) {
             let dispatchGroup = DispatchGroup()
@@ -136,9 +137,9 @@ class HomeViewController: UIViewController {
             print("Fetching All Recipes...")
             self.allRecipesViewModel.allRecipesUpdated = { [weak self] in
                 print("All Recipes callback received")
-                defer {
-                    dispatchGroup.leave()
-                }
+//                defer {
+//                    dispatchGroup.leave()
+//                }
                 self?.reloadTableView()
             }
             self.allRecipesViewModel.fetchAllRecipes()

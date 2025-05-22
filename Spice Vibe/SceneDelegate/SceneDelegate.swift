@@ -9,37 +9,21 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
     var window: UIWindow?
 
       func scene(_ scene: UIScene, willConnectTo session: UISceneSession, options connectionOptions: UIScene.ConnectionOptions)
-//    {
-//        guard let windowScene = (scene as? UIWindowScene) else { return }
-//        self.window = UIWindow(windowScene: windowScene)
-//
-//      
-//        
-//        if UserDefaults.standard.bool(forKey: "signUPSuccessfully") == true{
-//          
-//        } else{
-//            // Load SignUp storyboard
-//            let storyboard = UIStoryboard(name: "SignUpStoryBoard", bundle: nil)
-//            let signUpVc = storyboard.instantiateInitialViewController()
-//            
-//            // Set rootViewController
-//            self.window?.rootViewController = signUpVc
-//            self.window?.makeKeyAndVisible()
-//        }
-//    }
     {
         guard let windowScene = (scene as? UIWindowScene) else { return }
-
-        // Use the existing window property
         self.window = UIWindow(windowScene: windowScene)
-
-        // Load SignUp storyboard
-        let storyboard = UIStoryboard(name: "SignUpStoryBoard", bundle: nil)
-        let signUpVc = storyboard.instantiateInitialViewController()
         
-        // Set rootViewController
-        self.window?.rootViewController = signUpVc
-        self.window?.makeKeyAndVisible()
+        if UserDefaults.standard.bool(forKey: "signUPSuccessfully") == true{
+            let homeVc = SpiceVibeStoryBoards.viewController(from: .main, ofType: HomeViewController.self)
+            self.window?.rootViewController = homeVc
+            self.window?.makeKeyAndVisible()
+            
+        } else{
+            let signUpVc = SpiceVibeStoryBoards.viewController(from: .signUp, ofType: SignUpViewController.self)
+            // Set rootViewController
+            self.window?.rootViewController = signUpVc
+            self.window?.makeKeyAndVisible()
+        }
     }
     
     func sceneDidDisconnect(_ scene: UIScene) {

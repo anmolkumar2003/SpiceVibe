@@ -79,14 +79,14 @@ extension HomeViewController: UITableViewDataSource,UITableViewDelegate{
         navigationController?.pushViewController(vc, animated: true)
     }
 
-    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        if indexPath.row == 0{
-            return 160
-        }else if indexPath.row == 1{
-            return 30
-        }
-        return 160
-    }
+//    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+//        if indexPath.row == 0{
+//            return 160
+//        }else if indexPath.row == 1{
+//            return 30
+//        }
+//        return 160
+//    }
     
     @objc func viewAllDetailsBtn(sender: UIButton){
         let vc = SpiceVibeStoryBoards.viewController(from: .DetailedRecipe, ofType: DetailedRecipeViewController.self)

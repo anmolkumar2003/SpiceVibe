@@ -39,7 +39,14 @@ class SignUpViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         setViewUI()
+        backButtonView.isHidden = true
         activityIndicator.isHidden = true
+        if isComeFromLogin == true{
+            isComeFromLogin = false
+            backButtonView.isHidden = false
+        } else{
+            backButtonView.isHidden = true
+        }
     }
     
     //MARK: IBActions
@@ -55,14 +62,18 @@ class SignUpViewController: UIViewController {
           
           if !isValidEmail(email) {
               errorLabel.text = "Invalid email address."
+              return
           } else if !isValidPassword(password) {
               errorLabel.text = "Password must be at least 6 characters."
+              return
           } else if !doPasswordsMatch(password, confirmPassword) {
               errorLabel.text = "Passwords do not match."
+              return
           } else {
               errorLabel.text = ""
-        
+              return
           }
+        
         guard let sceneDelegate = UIApplication.shared.connectedScenes.first?.delegate as? SceneDelegate,
               let window = sceneDelegate.window,
               let tabBarVC = UIStoryboard(name: "Main", bundle: nil)
@@ -89,6 +100,7 @@ class SignUpViewController: UIViewController {
             self.activityIndicator.startAnimating()
             DispatchQueue.main.asyncAfter(deadline: .now() + 3, execute: {
                 self.goToHomeScreen()
+                UserDefaults.standard.setValue(true, forKey: "signUPSuccessfully")
                 self.activityIndicator.isHidden = true
             })
             
@@ -104,8 +116,7 @@ class SignUpViewController: UIViewController {
     }
     
     @IBAction func backBtnAction(_ sender: Any) {
-        let loginVc = SpiceVibeStoryBoards.viewController(from: .DetailedRecipe, ofType: DetailedRecipeViewController.self)
-        self.navigationController?.pushViewController(loginVc, animated: true)
+        self.navigationController?.popViewController(animated: true)
     }
     
     @IBAction func passwordToggleBtnAction(_ sender: UIButton) {
@@ -127,8 +138,14 @@ class SignUpViewController: UIViewController {
     }
     
     func goToHomeScreen() {
-        let homeVc = SpiceVibeStoryBoards.viewController(from: .main, ofType: HomeViewController.self)
-        navigationController?.pushViewController(homeVc, animated: true)
+        let homeVC = SpiceVibeStoryBoards.viewController(from: .main, ofType: HomeViewController.self)
+        let navController = UINavigationController(rootViewController: homeVC)
+        navController.navigationBar.isHidden = true
+        if let sceneDelegate = UIApplication.shared.connectedScenes.first?.delegate as? SceneDelegate,
+           let window = sceneDelegate.window {
+            window.rootViewController = navController
+            window.makeKeyAndVisible()
+        }
     }
     
     func setViewUI(){
